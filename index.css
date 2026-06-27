@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: white;
+}
+.logo{
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+p{
+    color: white;
+}
+body{
+    background-color: black;
+}
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:20px 20px;
+
+animation: slideDown 1s ease;
+}
+
+.navlist{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.navlist a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+/* underline animation */
+.navlist a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.4s ease;
+}
+
+.navlist a:hover::after{
+    width: 100%;
+}
+.navlist li{
+    list-style-type: none; 
+}
+nav{
+    align-items: center;
+}
+.message{
+    color: white;
+    border: 1px solid;
+    padding: 15px;
+    border-radius: 22px;
+    transition: 0.5s ease;
+}
+.message:hover{
+    background-color: white;
+    color: black;
+    transform:scale(1.05);
+}
+.landing{
+    padding: 40px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.typing{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    animation: typing 4s steps(40, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing{
+    from{ width: 0 }
+    to{ width: 100% }
+}
+
+@keyframes blink{
+    50%{ border-color: transparent }
+}
+
+.landing p{
+    padding-top: 10px;
+}
+.landing a{
+    list-style-type: none;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    transition: 0.5s ease-in;
+    background-color: grey;
+    padding: 15px;
+}
+.landing a:hover{
+    background-color: white;
+    color: black;
+    transform:scale(1.05);
+}
+
+.col-2 img{
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideIn 1.5s ease forwards;
+}
+
+@keyframes slideIn{
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header1{
+    text-align: center;
+    color: white;
+    padding-top: 25px;
+}
+.gallery-title{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.gallery-title::before,
+.gallery-title::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 2px;
+    background: white;
+}
+
+.gallery-title::before{
+    left: -90px;
+}
+
+.gallery-title::after{
+    right: -90px;
+}
+
+
+.header2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.box{
+    width: 22%;
+    text-align: center;
+    transition: 0.5s ease;
+}
+
+.box img {
+    width: 100%;
+    height: 250px;       /* Force same height */
+    object-fit: cover;   /* Crop nicely without distortion */
+    border: 1px solid ;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    
+}
+.box:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px;
+    gap: 40px;
+}
+
+.about-1{
+    flex: 1;
+}
+
+.about-1 img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.about-2{
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.08);
+    color: white;
+}
+
+.about-2 h3{
+    font-size: 30px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.about-2 p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ddd;
+}
+.another{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+}
+
+.another img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* animation */
+.about-3, .about-4{
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: fadeUp 1s ease forwards;
+    transition: all 0.4s ease;
+}
+
+.about-4{
+    animation-delay: 0.5s;
+}
+.about-3:hover, .about-4:hover{
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+}
+
+.about-3:hover img, .about-4:hover img{
+    transform: scale(1.08);
+}
+
+
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media(max-width: 768px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .landing{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-2 img{
+        width: 100%;
+    }
+
+    .box{
+        width: 100%;
+    }
+
+    .about{
+        flex-direction: column;
+    }
+
+    .another{
+        flex-direction: column;
+    }
+
+}
